@@ -65,7 +65,7 @@ class Neuron:
             to_return *= neuron.value
         
         for multiplier_index in range(len(self.brain.multipliers)):
-            to_return *= ((1-self.multipliers[multiplier_index])*self.brain.multipliers[multiplier_index])+1
+            to_return *= ((1-self.multipliers[multiplier_index])*(self.brain.multipliers[multiplier_index]-1))+1
         
         return to_return
 
