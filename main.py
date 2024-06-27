@@ -11,11 +11,12 @@ winners = 1
 winner_copys = 3
 
 def main():
-    if input("try load? y/n").find("n") == -1:
-        brains = restart()
-    else:
+    if input("try load? y/n").find("n") > -1:
         pass
-        #load a file
+    #load a file
+    else:
+        brains = restart()
+        
     print("starting simulation")
     
 
@@ -43,8 +44,9 @@ def generation(brains):
     #select fittest
     won = []
     for w in range(winners):
-        won.append(brains[brains.index(max(brains))])
-        brains.pop(brains.index(max(brains)))
+        won.append(brains[fitnesses.index(max(fitnesses))])
+        brains.pop(fitnesses.index(max(fitnesses)))
+        fitnesses.pop(fitnesses.index(max(fitnesses)))
 
     next_gen = []
 
